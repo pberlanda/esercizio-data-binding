@@ -2,6 +2,14 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+
 <input type="text" class="forms-module" [(ngModel)]="username"> <!--property binding-->
+
 <p>{{username}}</p> <!--String interpolation-->
-<button class="btn btn-primary" [disabled]="username === ''">Reset</button> <!-- [disabled] è property binding--> <!-- === controlla valore e tipo-->
+
+<button class="btn btn-primary" [disabled]="username === ''" (click)="username = ''">Reset</button> <!-- [disabled] è property binding--> <!-- operatore === controlla valore e tipo--> <!-- c'è anche event binding-->
+
+<p *ngIf="testNgIf; else noVisible">così è visibile {{username}}</p> <!-- questo è un if-->
+<ng-template #noVisible> <!-- questo è un if then else: questo sarà visibile solo a condizione-->
+  <p>così non si vede niente</p>
+</ng-template>

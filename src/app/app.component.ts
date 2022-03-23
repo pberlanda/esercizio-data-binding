@@ -8,4 +8,5 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   username;
+  testNgIf: boolean = false;
 }
